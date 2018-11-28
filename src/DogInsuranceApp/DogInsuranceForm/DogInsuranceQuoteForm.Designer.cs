@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCurrentAge = new System.Windows.Forms.MaskedTextBox();
-            this.txtExpectedLife = new System.Windows.Forms.MaskedTextBox();
-            this.ddlPercentCovered = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.ddlMajorClaims = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.ddlDeductible = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.ddlMajorClaims = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ddlPercentCovered = new System.Windows.Forms.ComboBox();
+            this.txtExpectedLife = new System.Windows.Forms.MaskedTextBox();
+            this.txtCurrentAge = new System.Windows.Forms.MaskedTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtQuote = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
@@ -66,68 +66,37 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pet Information";
             // 
-            // label1
+            // ddlMajorClaims
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(81, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Current Age";
+            this.ddlMajorClaims.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddlMajorClaims.FormattingEnabled = true;
+            this.ddlMajorClaims.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"});
+            this.ddlMajorClaims.Location = new System.Drawing.Point(150, 125);
+            this.ddlMajorClaims.Name = "ddlMajorClaims";
+            this.ddlMajorClaims.Size = new System.Drawing.Size(121, 21);
+            this.ddlMajorClaims.TabIndex = 9;
+            this.ddlMajorClaims.SelectedIndexChanged += new System.EventHandler(this.DropDownListValueChanged);
             // 
-            // label2
+            // label5
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(49, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Expected Lifespan";
-            // 
-            // txtCurrentAge
-            // 
-            this.txtCurrentAge.Location = new System.Drawing.Point(150, 19);
-            this.txtCurrentAge.Mask = "00000";
-            this.txtCurrentAge.Name = "txtCurrentAge";
-            this.txtCurrentAge.Size = new System.Drawing.Size(100, 20);
-            this.txtCurrentAge.TabIndex = 1;
-            this.txtCurrentAge.TextChanged += new System.EventHandler(this.TextBoxValueChanged);
-            // 
-            // txtExpectedLife
-            // 
-            this.txtExpectedLife.Location = new System.Drawing.Point(150, 45);
-            this.txtExpectedLife.Mask = "00000";
-            this.txtExpectedLife.Name = "txtExpectedLife";
-            this.txtExpectedLife.Size = new System.Drawing.Size(100, 20);
-            this.txtExpectedLife.TabIndex = 3;
-            this.txtExpectedLife.TextChanged += new System.EventHandler(this.TextBoxValueChanged);
-            // 
-            // ddlPercentCovered
-            // 
-            this.ddlPercentCovered.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ddlPercentCovered.FormattingEnabled = true;
-            this.ddlPercentCovered.Items.AddRange(new object[] {
-            "60",
-            "70",
-            "80"});
-            this.ddlPercentCovered.Location = new System.Drawing.Point(150, 71);
-            this.ddlPercentCovered.Name = "ddlPercentCovered";
-            this.ddlPercentCovered.Size = new System.Drawing.Size(121, 21);
-            this.ddlPercentCovered.TabIndex = 5;
-            this.ddlPercentCovered.SelectedIndexChanged += new System.EventHandler(this.DropDownListValueChanged);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(57, 74);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Percent Covered";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(30, 128);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(114, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Major Claims Expected";
             // 
             // label4
             // 
@@ -154,37 +123,68 @@
             this.ddlDeductible.TabIndex = 7;
             this.ddlDeductible.SelectedIndexChanged += new System.EventHandler(this.DropDownListValueChanged);
             // 
-            // label5
+            // label3
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(30, 128);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(114, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Major Claims Expected";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(57, 74);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Percent Covered";
             // 
-            // ddlMajorClaims
+            // ddlPercentCovered
             // 
-            this.ddlMajorClaims.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ddlMajorClaims.FormattingEnabled = true;
-            this.ddlMajorClaims.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9"});
-            this.ddlMajorClaims.Location = new System.Drawing.Point(150, 125);
-            this.ddlMajorClaims.Name = "ddlMajorClaims";
-            this.ddlMajorClaims.Size = new System.Drawing.Size(121, 21);
-            this.ddlMajorClaims.TabIndex = 9;
-            this.ddlMajorClaims.SelectedIndexChanged += new System.EventHandler(this.DropDownListValueChanged);
+            this.ddlPercentCovered.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddlPercentCovered.FormattingEnabled = true;
+            this.ddlPercentCovered.Items.AddRange(new object[] {
+            "60",
+            "70",
+            "80"});
+            this.ddlPercentCovered.Location = new System.Drawing.Point(150, 71);
+            this.ddlPercentCovered.Name = "ddlPercentCovered";
+            this.ddlPercentCovered.Size = new System.Drawing.Size(121, 21);
+            this.ddlPercentCovered.TabIndex = 5;
+            this.ddlPercentCovered.SelectedIndexChanged += new System.EventHandler(this.DropDownListValueChanged);
+            // 
+            // txtExpectedLife
+            // 
+            this.txtExpectedLife.Location = new System.Drawing.Point(150, 45);
+            this.txtExpectedLife.Mask = "00000";
+            this.txtExpectedLife.Name = "txtExpectedLife";
+            this.txtExpectedLife.Size = new System.Drawing.Size(100, 20);
+            this.txtExpectedLife.TabIndex = 3;
+            this.txtExpectedLife.TextChanged += new System.EventHandler(this.TextBoxValueChanged);
+            // 
+            // txtCurrentAge
+            // 
+            this.txtCurrentAge.Location = new System.Drawing.Point(150, 19);
+            this.txtCurrentAge.Mask = "00000";
+            this.txtCurrentAge.Name = "txtCurrentAge";
+            this.txtCurrentAge.Size = new System.Drawing.Size(100, 20);
+            this.txtCurrentAge.TabIndex = 1;
+            this.txtCurrentAge.TextChanged += new System.EventHandler(this.TextBoxValueChanged);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(49, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Expected Lifespan";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(81, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Current Age";
             // 
             // groupBox2
             // 

@@ -17,6 +17,7 @@ namespace DogInsuranceTests
             var policyData = InsuranceValue.GetInsuranceValue(6, 15, 60, 500, 4);
             Assert.NotNull(policyData.BasicInfo());
             Assert.AreEqual(36.34f, policyData.startingMonthlyPremium);
+            Assert.AreEqual(7975.08f, policyData.totalPaid);
         }
     }
 }

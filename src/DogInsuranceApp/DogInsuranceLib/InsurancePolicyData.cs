@@ -10,8 +10,7 @@ namespace DogInsuranceLib
     public class InsurancePolicyData
     {
         public int yearsInsured { get; set; }
-        public float yearlyPremium { get; set; }
-        public float premiumIncrease { get; set; }
+        public List<float> monthlyPayments { get; set; }
         public float totalPaid { get; set; }
         public float withoutInsurance { get; set; }
 

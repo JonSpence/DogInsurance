@@ -22,12 +22,12 @@ namespace DogInsuranceLib
             var r = new InsurancePolicyData();
 
             r.yearsInsured = ageOfDeath - currentAge;
-            r.startingMonthlyPremium = (float)Math.Round(YearlyPremium(percentCovered, deductible), 2);
+            var startingMonthlyPremium = (float)Math.Round(YearlyPremium(percentCovered, deductible), 2);
 
             //r.premiumIncrease = (float)Math.Round(PremiumIncrease(r.yearsInsured, r.startingMonthlyPremium), 2);
 
             // For each year we are insured, let's add up the premiums
-            float premium = r.startingMonthlyPremium;
+            float premium = startingMonthlyPremium;
             r.monthlyPayments = new List<float>();
             for (int i = 0; i < r.yearsInsured; i++)
             {

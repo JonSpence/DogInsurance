@@ -4,34 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DogInsuranceApp
+namespace DogInsuranceLib
 {
     public class InsuranceValue
     {
-
-        /// <summary>
-        /// Represents all the information about the pet policy
-        /// </summary>
-        public class InsurancePolicyData
-        {
-            public int yearsInsured { get; set; }
-            public float yearlyPremium { get; set; }
-            public float premiumIncrease { get; set; }
-            public float totalPaid { get; set; }
-            public float withoutInsurance { get; set; }
-
-            /// <summary>
-            /// Output the final amount
-            /// </summary>
-            /// <returns></returns>
-            public string BasicInfo()
-            {
-                return "Total paid over " + yearsInsured + " years (including yearly premium increases): $" + totalPaid.ToString("0.00") + "\nWithout insurance, you would have paid: $" + withoutInsurance.ToString("0.00");
-            }
-        }
-
-        
-
+        #region Interface
         /// <summary>
         /// Prints out the insurance value of a proposed insurance policy
         /// </summary>
@@ -49,17 +26,14 @@ namespace DogInsuranceApp
 
             r.premiumIncrease = PremiumIncrease(r.yearsInsured, r.yearlyPremium);
 
-            // yearlyPremiumAdjusted = yearlyPremiumAdjusted(yearsInsured, yearlyPremium);
             r.totalPaid = r.premiumIncrease + MajorClaims(majorClaims, percentCovered, deductible);
             r.withoutInsurance = majorClaims * 4000;
 
             return r;
-
-
-
         }
+        #endregion
 
-
+        #region Implementation
         private static float YearlyPremium(Int32 myPercent, Int32 myDeductible)
         {
             // This method calculates the yearly premium based on an array of sample values from healthypaws website
@@ -74,12 +48,10 @@ namespace DogInsuranceApp
             // create array with HealthyPaws insurance costs for 6yo small mixed breed
             float[,] arrayMultiplier = new float[3, 3] { { 1.34f, 1.5f, 1.66f }, { 1.11f, 1.24f, 1.36f }, { 1f, 1.11f, 1.23f } };
 
+            // Calculate yearly premium
             int pct = Array.BinarySearch(percentLabels, myPercent);
             int ded = Array.BinarySearch(deductibleLabels, myDeductible);
-            // Console.WriteLine("Pct: " + pct + "\nDed: " + ded); // check values
             var myPremium = basePremium * arrayMultiplier[ded, pct];
-            // Console.WriteLine(myPremium); // check values
-
             return myPremium;
         }
 
@@ -115,22 +87,11 @@ namespace DogInsuranceApp
             // average cost of a major injury/illness
             var avgCost = 4000;
             float percentPaid = (100 - percentCovered) / 100f;
+
             // figure out how much the owner pays for each incident after paying the full deductible
             float total = ((((avgCost - deductible) * percentPaid) + deductible) * majorClaims);
-
-            /*
-            Console.WriteLine("majorClaims: " + majorClaims.ToString() + "\n");
-            Console.WriteLine("avgCost: " + avgCost.ToString() + "\n");
-            Console.WriteLine("percentCovered: " + percentCovered.ToString() + "\n");
-            Console.WriteLine("percentPaid: " + percentPaid.ToString() + "\n");
-            Console.WriteLine("deductible: " + deductible.ToString() + "\n");
-            Console.WriteLine("total: " + total.ToString() + "\n");
-            */
             return total;
         }
-        
-        
-
-
+        #endregion
     }
 }
